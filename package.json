@@ -7,10 +7,10 @@
     "email": "opensource@nrk.no",
     "url": "https://nrkbeta.no/"
   },
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "run-s clean",
     "build": "tsc -p ./tsconfig.build.json",
@@ -20,7 +20,8 @@
     "lint-fix:format": "yarn --silent prettier --write",
     "lint-fix:tslint": "yarn --silent tslint --fix",
     "lint:format": "yarn --silent prettier -l",
-    "lint:tslint": "yarn --silent tslint"
+    "lint:tslint": "yarn --silent tslint",
+    "release": "np"
   },
   "dependencies": {
     "ajv": "^6.10.0",
