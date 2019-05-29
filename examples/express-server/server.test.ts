@@ -54,7 +54,7 @@ describe("Server implements OpenApi", () => {
     );
   });
   it("should not match invalid response body", async () => {
-    const response = await request(app).get("/rating/exempt-invalid-body");
+    const response = await request(app).get("/rating/invalid-body");
     await expect(response).not.toMatchApiResponse(
       openapi,
       "get",
@@ -62,9 +62,7 @@ describe("Server implements OpenApi", () => {
     );
   });
   it("should not match invalid content type", async () => {
-    const response = await request(app).get(
-      "/rating/exempt-invalid-content-type"
-    );
+    const response = await request(app).get("/rating/invalid-content-type");
     await expect(response).not.toMatchApiResponse(
       openapi,
       "get",
@@ -72,7 +70,7 @@ describe("Server implements OpenApi", () => {
     );
   });
   it("should not match invalid response status", async () => {
-    const response = await request(app).get("/rating/exempt-invalid-status");
+    const response = await request(app).get("/rating/invalid-status");
     await expect(response).not.toMatchApiResponse(
       openapi,
       "get",
