@@ -1,5 +1,14 @@
 # expect-openapi
 
+her brukes **kun** yarn
+
+scripts:
+
+- **release** release a new version
+- **test**
+- **lint** finenr kodefeil
+- **lint-fix** fikser kodefeil
+
 ## jest.setup.ts
 
 ```ts
