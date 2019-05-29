@@ -5,6 +5,7 @@
     "type": "git",
     "url": "git+https://github.com/nrkno/expect-openapi.git"
   },
+  "description": "Expect objects to match OpenAPI documents",
   "license": "MIT",
   "author": {
     "name": "NRK",

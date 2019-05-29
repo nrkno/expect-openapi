@@ -1,6 +1,6 @@
 # expect-openapi [![Build Status](https://travis-ci.org/nrkno/expect-openapi.svg?branch=master)](https://travis-ci.org/nrkno/expect-openapi) [![npm](https://img.shields.io/npm/v/@nrk/expect-openapi.svg)](https://www.npmjs.com/package/@nrk/expect-openapi)
 
-> expect objects to match OpenAPI documents
+> Expect objects to match OpenAPI documents
 
 ## Setup
 
