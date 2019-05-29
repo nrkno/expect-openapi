@@ -1,0 +1,31 @@
+{
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["packages/fargerik-server/src/external/psintCatalog/*"]
+  },
+  "rules": {
+    "no-console": {
+      "severity": "warning"
+    },
+    "member-access": [true, "no-public"],
+    "member-ordering": false,
+    "triple-equals": [true, "allow-null-check"],
+    "variable-name": [
+      true,
+      "allow-pascal-case",
+      "allow-leading-underscore",
+      "ban-keywords"
+    ],
+    "interface-name": true,
+    "no-submodule-imports": false,
+    "object-literal-sort-keys": false,
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
+    "prefer-conditional-expression": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "no-switch-case-fall-through": true
+  }
+}

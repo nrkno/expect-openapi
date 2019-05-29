@@ -1,0 +1,79 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Contact Name",
+      "email": "contact@example.com",
+      "url": "https://example.com/"
+    }
+  },
+  "tags": [
+    {
+      "name": "Metadata",
+      "description": "Metadata related requests"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getMetadata",
+        "summary": "Get metadata from the root of the API",
+        "tags": ["Metadata"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimpleLink"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/number": {
+      "get": {
+        "operationId": "getNumber",
+        "summary": "Get metadata from the root of the API",
+        "tags": ["Metadata"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32Number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Int32Number": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "Int64Number": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "DoubleNumber": {
+        "type": "integer",
+        "format": "double"
+      },
+      "SimpleLink": {
+        "type": "object",
+        "required": ["href"],
+        "properties": { "href": { "type": "string" } }
+      }
+    }
+  }
+}
