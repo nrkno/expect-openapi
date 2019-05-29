@@ -1,24 +1,6 @@
 import request from "supertest";
 import openapi from "./openapi.json";
-import { app, exempt, rated } from "./server";
-
-describe("OpenApi spec examples", () => {
-  it("should match LegalAge example", async () => {
-    await expect(openapi.components.schemas.LegalAge.example).toMatchRef$(
-      openapi,
-      "#/components/schemas/LegalAge"
-    );
-  });
-});
-
-describe("constants are valid", () => {
-  it("exempt is valid", async () => {
-    await expect(exempt).toMatchRef$(openapi, "#/components/schemas/LegalAge");
-  });
-  it("rated is valid", async () => {
-    await expect(rated).toMatchRef$(openapi, "#/components/schemas/LegalAge");
-  });
-});
+import { app } from "./server";
 
 describe("Server implements OpenApi", () => {
   // could fetch spec from some where else

@@ -1,0 +1,94 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Contact Name",
+      "email": "contact@example.com",
+      "url": "https://example.com/"
+    }
+  },
+  "tags": [
+    {
+      "name": "Metadata",
+      "description": "Metadata related requests"
+    }
+  ],
+  "paths": {
+    "/rating/{programId}": {
+      "get": {
+        "operationId": "getLegalAge",
+        "summary": "Get rating (legal age) for a program",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "programId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": ["Metadata"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/vnd.nrk.legal-age.1.0+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegalAge"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LegalAgeRating": {
+        "type": "object",
+        "properties": {
+          "code": { "type": "string" },
+          "displayValue": { "type": "string" },
+          "displayAge": { "type": "string" }
+        },
+        "required": ["code", "displayAge", "displayValue"]
+      },
+      "LegalAgeBodyRated": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "enum": ["rated"] },
+          "rating": { "$ref": "#/components/schemas/LegalAgeRating" }
+        },
+        "required": ["rating", "status"]
+      },
+      "LegalAgeBodyExempt": {
+        "type": "object",
+        "properties": { "status": { "type": "string", "enum": ["exempt"] } },
+        "required": ["status"]
+      },
+      "LegalAge": {
+        "type": "object",
+        "example": {
+          "legalReference": "LOV2015-02-06-7",
+          "body": {
+            "status": "exempt"
+          }
+        },
+        "properties": {
+          "legalReference": { "type": "string" },
+          "body": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/LegalAgeBodyExempt" },
+              { "$ref": "#/components/schemas/LegalAgeBodyRated" }
+            ]
+          }
+        },
+        "required": ["body", "legalReference"]
+      }
+    }
+  }
+}
