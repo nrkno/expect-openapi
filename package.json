@@ -53,5 +53,8 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
