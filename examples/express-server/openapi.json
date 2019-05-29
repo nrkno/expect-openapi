@@ -88,33 +88,6 @@
           }
         },
         "required": ["body", "legalReference"]
-      },
-      "OptionalTypeProp": {
-        "type": "object",
-        "properties": {
-          "optional": {
-            "type": "string"
-          }
-        }
-      },
-      "RequiredTypeProp": {
-        "type": "object",
-        "properties": {
-          "required": {
-            "type": "string"
-          }
-        },
-        "required": ["required"]
-      },
-      "NullableTypeProp": {
-        "type": "object",
-        "properties": {
-          "nullable": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "required": ["nullable"]
       }
     }
   }
