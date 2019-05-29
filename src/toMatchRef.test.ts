@@ -45,4 +45,34 @@ describe("toMatchRef$", () => {
       "#/components/schemas/Int64Number"
     );
   });
+  it("should handle optional props", async () => {
+    await expect({}).toMatchRef$(
+      testApi,
+      "#/components/schemas/OptionalTypeProp"
+    );
+  });
+  it("should handle required props", async () => {
+    await expect({}).not.toMatchRef$(
+      testApi,
+      "#/components/schemas/RequiredTypeProp"
+    );
+    await expect({ required: "yes" }).toMatchRef$(
+      testApi,
+      "#/components/schemas/RequiredTypeProp"
+    );
+  });
+  it("should handle nullable props", async () => {
+    await expect({}).not.toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableTypeProp"
+    );
+    await expect({ nullable: null }).toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableTypeProp"
+    );
+    await expect({ nullable: "nullable" }).toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableTypeProp"
+    );
+  });
 });

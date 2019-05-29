@@ -4,6 +4,7 @@
     "exclude": ["packages/fargerik-server/src/external/psintCatalog/*"]
   },
   "rules": {
+    "no-floating-promises": true,
     "no-console": {
       "severity": "warning"
     },

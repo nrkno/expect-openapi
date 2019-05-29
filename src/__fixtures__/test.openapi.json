@@ -73,6 +73,33 @@
         "type": "object",
         "required": ["href"],
         "properties": { "href": { "type": "string" } }
+      },
+      "OptionalTypeProp": {
+        "type": "object",
+        "properties": {
+          "optional": {
+            "type": "string"
+          }
+        }
+      },
+      "RequiredTypeProp": {
+        "type": "object",
+        "properties": {
+          "required": {
+            "type": "string"
+          }
+        },
+        "required": ["required"]
+      },
+      "NullableTypeProp": {
+        "type": "object",
+        "properties": {
+          "nullable": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": ["nullable"]
       }
     }
   }
