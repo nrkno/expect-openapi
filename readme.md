@@ -19,7 +19,6 @@ scripts:
 - **test**
 - **lint** finner kodefeil
 - **lint-fix** fikser kodefeil
-- **release** publish to npm
 
 ## jest.setup.ts
 

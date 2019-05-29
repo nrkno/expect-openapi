@@ -25,7 +25,6 @@
     "lint-fix:tslint": "yarn --silent tslint --fix",
     "lint:format": "yarn --silent prettier -l",
     "lint:tslint": "yarn --silent tslint",
-    "release": "np",
     "test": "jest",
     "tslint": "tslint 'src/**/*.{ts,tsx}'",
     "prettier": "prettier \"src/**/*.{js,jsx,ts,less,tsx,json}\""
@@ -46,7 +45,6 @@
     "@types/lodash": "^4.14.132",
     "@types/prettier": "^1.16.4",
     "jest": "^24.8.0",
-    "np": "*",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.3",
