@@ -50,18 +50,16 @@ export function transformNullable(object: any) {
 
 const isInt32: NumberFormatDefinition = {
   type: "number",
-  validate: number => {
+  validate: n => {
     const MIN_INT32 = -2147483648;
     const MAX_INT32 = 2147483647;
-    return number <= MAX_INT32 && number >= MIN_INT32;
+    return n <= MAX_INT32 && n >= MIN_INT32;
   }
 };
 
 const isInt64: NumberFormatDefinition = {
   type: "number",
-  validate: number => {
-    return (
-      number <= Number.MAX_SAFE_INTEGER && number >= Number.MIN_SAFE_INTEGER
-    );
+  validate: n => {
+    return n <= Number.MAX_SAFE_INTEGER && n >= Number.MIN_SAFE_INTEGER;
   }
 };

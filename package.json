@@ -25,7 +25,9 @@
     "lint-fix:tslint": "yarn --silent tslint --fix",
     "lint:format": "yarn --silent prettier -l",
     "lint:tslint": "yarn --silent tslint",
-    "test": "jest"
+    "test": "jest",
+    "tslint": "tslint 'src/**/*.{ts,tsx}'",
+    "prettier": "prettier \"src/**/*.{js,jsx,ts,less,tsx,json}\""
   },
   "dependencies": {
     "ajv": "^6.10.0",
