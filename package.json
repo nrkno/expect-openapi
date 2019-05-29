@@ -1,6 +1,10 @@
 {
   "name": "@nrk/expect-openapi",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nrkno/expect-openapi.git"
+  },
   "license": "MIT",
   "author": {
     "name": "NRK",
