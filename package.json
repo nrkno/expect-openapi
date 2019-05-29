@@ -26,7 +26,8 @@
     "lint:format": "yarn --silent prettier -l",
     "lint:tslint": "yarn --silent tslint",
     "prepare": "run-s build",
-    "test": "jest",
+    "test": "run-s lint test:*",
+    "test:jest": "jest",
     "tslint": "tslint 'src/**/*.{ts,tsx}'",
     "prettier": "prettier \"src/**/*.{js,jsx,ts,less,tsx,json}\""
   },
