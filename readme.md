@@ -1,5 +1,17 @@
 # expect-openapi
 
+> expect objects to match OpenAPI documents
+
+```
+yarn add -D @nrk/expect-openapi
+```
+
+```
+npm add --dev @nrk/expect-openapi
+```
+
+## utvikling
+
 her brukes **kun** yarn
 
 scripts:
