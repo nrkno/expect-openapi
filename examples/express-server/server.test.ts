@@ -25,9 +25,7 @@ describe("Server implements OpenApi", () => {
   //
   // let openapi: any;
   // beforeAll(async () => {
-  //   const res = await fetch(
-  //     'https://psapi.nrk.no/documentation/openapi/fargerik/openapi.json'
-  //   );
+  //   const res = await fetch('https://example.com/openapi.json');
   //   openapi = await res.json();
   // });
   it("should match valid exempt response", async () => {
