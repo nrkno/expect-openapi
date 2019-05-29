@@ -21,7 +21,6 @@
     "lint-fix:tslint": "yarn --silent tslint --fix",
     "lint:format": "yarn --silent prettier -l",
     "lint:tslint": "yarn --silent tslint",
-    "release": "np",
     "test": "jest"
   },
   "dependencies": {

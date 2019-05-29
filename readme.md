@@ -16,7 +16,6 @@ her brukes **kun** yarn
 
 scripts:
 
-- **release** release a new version
 - **test**
 - **lint** finenr kodefeil
 - **lint-fix** fikser kodefeil
@@ -40,7 +39,7 @@ setupFiles: ["<rootDir>/jest.setup.ts"],
 ```ts
 import superagent from "superagent";
 // 1. import the openapi spec
-import openapi from "../public/documentation/openapi/fantastic/openapi.json";
+import openapi from "./openapi.json";
 
 describe("my api", () => {
   it("should have valid /fantastic response, according to spec", async () => {
@@ -61,7 +60,7 @@ describe("my api", () => {
 
 ```ts
 // 1. import the openapi spec
-import openapi from "../public/documentation/openapi/fantastic/openapi.json";
+import openapi from "./openapi.json";
 
 describe("my complex api", () => {
   it("should match SimpleLink", async () => {
