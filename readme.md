@@ -41,7 +41,7 @@ describe("my api", () => {
 });
 ```
 
-## testing object against a part of a openapi 3 spec
+## Expect object to match a part of a OpenAPI document
 
 ```ts
 import openapi from "./openapi.json"; // OpenAPI 3 schema
