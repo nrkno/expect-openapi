@@ -35,14 +35,22 @@ describe("Server implements OpenApi", () => {
       "get",
       "/rating/{programId}"
     );
+    await expect(response.body.body).toMatchRef$(
+      openapi,
+      "#/components/schemas/LegalAgeBodyExempt"
+    );
   });
 
   it("should match valid rated response", async () => {
-    const response = await request(app).get("/rating/exempt");
+    const response = await request(app).get("/rating/rated");
     await expect(response).toMatchApiResponse(
       openapi,
       "get",
       "/rating/{programId}"
+    );
+    await expect(response.body.body).toMatchRef$(
+      openapi,
+      "#/components/schemas/LegalAgeBodyRated"
     );
   });
   it("should not match invalid response body", async () => {
@@ -54,15 +62,17 @@ describe("Server implements OpenApi", () => {
     );
   });
   it("should not match invalid content type", async () => {
-    const response = await request(app).get("/rating/exempt-invalid-body");
+    const response = await request(app).get(
+      "/rating/exempt-invalid-content-type"
+    );
     await expect(response).not.toMatchApiResponse(
       openapi,
       "get",
       "/rating/{programId}"
     );
   });
-  it("should not match invalid response type", async () => {
-    const response = await request(app).get("/rating/exempt-invalid-body");
+  it("should not match invalid response status", async () => {
+    const response = await request(app).get("/rating/exempt-invalid-status");
     await expect(response).not.toMatchApiResponse(
       openapi,
       "get",
