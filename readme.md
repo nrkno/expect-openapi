@@ -1,4 +1,4 @@
-# expect-openapi
+# expect-openapi [![Build Status](https://travis-ci.org/nrkno/expect-openapi.svg?branch=master)](https://travis-ci.org/nrkno/expect-openapi)
 
 > expect objects to match OpenAPI documents
 
