@@ -17,7 +17,7 @@ her brukes **kun** yarn
 scripts:
 
 - **test**
-- **lint** finenr kodefeil
+- **lint** finner kodefeil
 - **lint-fix** fikser kodefeil
 
 ## jest.setup.ts
