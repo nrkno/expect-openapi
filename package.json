@@ -29,7 +29,7 @@
     "prepare": "run-s build",
     "test": "run-s lint test:*",
     "test:jest": "jest",
-    "tslint": "tslint 'src/**/*.{ts,tsx}'",
+    "tslint": "tslint -p . 'src/**/*.{ts,tsx}'",
     "prettier": "prettier \"src/**/*.{js,jsx,ts,less,tsx,json}\""
   },
   "dependencies": {
