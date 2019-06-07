@@ -100,9 +100,7 @@ export async function toMatchApiResponse(
       message: () =>
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
-        `paths.${path}.${method}.responses has no responses. Should have either "default" or "${
-          received.status
-        }"`,
+        `paths.${path}.${method}.responses has no responses. Should have either "default" or "${received.status}"`,
       pass: false
     };
   }
@@ -122,9 +120,7 @@ export async function toMatchApiResponse(
       message: () =>
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
-        `paths.${path}.${method}.responses.${
-          received.status
-        }.content does not have ${received.type}`,
+        `paths.${path}.${method}.responses.${received.status}.content does not have ${received.type}`,
       pass: false
     };
   }
@@ -134,9 +130,7 @@ export async function toMatchApiResponse(
       message: () =>
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
-        `paths.${path}.${method}.responses.${received.status}.content.${
-          received.type
-        } does not have a schema`,
+        `paths.${path}.${method}.responses.${received.status}.content.${received.type} does not have a schema`,
       pass: false
     };
   }
