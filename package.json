@@ -37,7 +37,7 @@
     "better-ajv-errors": "^0.6.4",
     "expect": "^24.8.0",
     "jest-matcher-utils": "^24.8.0",
-    "json-schema-ref-parser": "^6.1.0",
+    "json-schema-ref-parser": "^7.0.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
