@@ -10,6 +10,8 @@ yarn add -D @nrk/expect-openapi
 npm add --dev @nrk/expect-openapi
 ```
 
+`jest.setup.ts`:
+
 ```ts
 import { toMatchApiResponse, toMatchRef$ } from "@nrk/expect-openapi";
 import expect from "expect";
