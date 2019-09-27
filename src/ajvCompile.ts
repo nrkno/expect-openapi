@@ -1,21 +1,27 @@
-import Ajv, { NumberFormatDefinition } from "ajv";
+import Ajv, { NumberFormatDefinition, Options } from "ajv";
 
 /**
  * @param schema dereferenced schema
  */
-export const ajvCompile = (schema: any) => {
+export const ajvCompile = (
+  schema: any,
+  {
+    unknownFormats = "ignore",
+    nullable = true,
+    jsonPointers = true,
+    ...rest
+  }: Options = {}
+) => {
   const ajv = new Ajv({
-    /**
-     * TODO: Add custom format supports for following formats.
-     * Maybe add formats from ajv-oai? https://git.io/fj4gs
-     */
-    unknownFormats: ["float", "double", "byte", "binary", "password"],
-    nullable: true,
-    jsonPointers: true
+    unknownFormats,
+    nullable,
+    jsonPointers,
+    ...rest
   });
   // custom formats
   ajv.addFormat("int32", isInt32);
   ajv.addFormat("int64", isInt64);
+  ajv.addFormat("url", ""); // the url format is wrong and deprecated
 
   const clone = JSON.parse(JSON.stringify(schema));
   transformNullable(clone);

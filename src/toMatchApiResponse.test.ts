@@ -20,4 +20,12 @@ describe("api responses", () => {
     await expect(response).toMatchApiResponse(testApi, "get", "/number");
     await expect(response).not.toMatchApiResponse(testApi, "get", "/");
   });
+  it("GET /unkown", async () => {
+    const response: IApiResponse = {
+      body: { unknown: "xxx000000", url: "/something" },
+      status: 200,
+      type: "application/json"
+    };
+    await expect(response).toMatchApiResponse(testApi, "get", "/unknown");
+  });
 });
