@@ -1,6 +1,6 @@
 {
   "name": "@nrk/expect-openapi",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nrkno/expect-openapi.git"
