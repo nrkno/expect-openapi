@@ -75,4 +75,16 @@ describe("toMatchRef$", () => {
       "#/components/schemas/NullableTypeProp"
     );
   });
+  it("should handle example", async () => {
+    await expect({ id: "hello" }).toMatchRef$(
+      testApi,
+      "#/components/schemas/WithExample"
+    );
+  });
+  it.only("should handle nullable array", async () => {
+    await expect({ nullable: null }).toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableOneOf"
+    );
+  });
 });

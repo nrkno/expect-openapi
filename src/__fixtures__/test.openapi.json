@@ -121,6 +121,9 @@
         },
         "required": ["nullable"]
       },
+      "NullableOneOf": {
+        "oneOf": [{ "$ref": "#/components/schemas/NullableTypeProp" }]
+      },
       "UnknownFormat": {
         "type": "object",
         "properties": {
@@ -132,6 +135,18 @@
             "type": "string",
             "format": "url"
           }
+        }
+      },
+      "WithExample": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "programId"
+          }
+        },
+        "example": {
+          "id": "hello"
         }
       }
     }

@@ -16,14 +16,16 @@ export const ajvCompile = (
     unknownFormats,
     nullable,
     jsonPointers,
+    schemaId: "auto",
     ...rest
   });
-  // custom formats
+  ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-04.json"));
   ajv.addFormat("int32", isInt32);
   ajv.addFormat("int64", isInt64);
   ajv.addFormat("url", ""); // the url format is wrong and deprecated
 
   const clone = JSON.parse(JSON.stringify(schema));
+  clone.$schema = "http://json-schema.org/draft-04/schema#";
   transformNullable(clone);
   return ajv.compile(clone);
 };
@@ -48,7 +50,12 @@ export function transformNullable(object: any) {
   }
 
   Object.keys(object).forEach(attr => {
-    if (object[attr] !== null && typeof object[attr] === "object") {
+    if (object[attr] == null) {
+      return;
+    }
+    if (Array.isArray(object[attr])) {
+      object[attr].forEach(transformNullable);
+    } else if (typeof object[attr] === "object") {
       transformNullable(object[attr]);
     }
   });
