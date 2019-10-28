@@ -30,7 +30,7 @@ export interface IApiResponse {
 declare global {
   namespace jest {
     // tslint:disable-next-line:interface-name
-    interface Matchers<R> {
+    interface Matchers<R, T> {
       /**
        * match super agent response against openapi spec
        * @param type openapi.json data, parsed as object

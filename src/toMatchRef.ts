@@ -6,7 +6,7 @@ import { ajvCompile } from "./ajvCompile";
 declare global {
   namespace jest {
     // tslint:disable-next-line:interface-name
-    interface Matchers<R> {
+    interface Matchers<R, T> {
       /**
        * match object against openapi ref$
        * @param schema openapi.json schema, parsed as object
