@@ -444,9 +444,9 @@
   integrity sha512-kV3w4KeLsRBW+O2rKhktBwENNJuqAUQHS3kf4ia2wIaF/MN6U7ANgTsx7tGremcA0Pk3Yh0Hl0iKiLPuBdIgmw==
 
 "@types/prettier@^1.18.3":
-  version "1.18.3"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.18.3.tgz#64ff53329ce16139f17c3db9d3e0487199972cd8"
-  integrity sha512-48rnerQdcZ26odp+HOvDGX8IcUkYOCuMc2BodWYTe956MqkHlOGAG4oFQ83cjZ0a4GAgj7mb4GUClxYd2Hlodg==
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-1.18.4.tgz#40bebad38700a2f785940f01bdc067276fd2f7b8"
+  integrity sha512-03H3ZfaayhhSwcE8YfYd2OWlUK2IaJYQO/7Q5DjhaU2PQw8OSoH/dl6dxdhTyA32aBg4+k+1EOCqb8czIeVY6Q==
 
 "@types/range-parser@*":
   version "1.2.3"
