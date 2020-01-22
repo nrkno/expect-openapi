@@ -35,7 +35,7 @@
   "dependencies": {
     "ajv": "^6.10.2",
     "better-ajv-errors": "^0.6.7",
-    "expect": "^24.9.0",
+    "expect": "^25.1.0",
     "jest-matcher-utils": "^24.9.0",
     "json-schema-ref-parser": "^7.1.2",
     "lodash": "^4.17.15"
