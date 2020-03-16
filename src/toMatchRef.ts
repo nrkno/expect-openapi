@@ -1,7 +1,7 @@
 import betterAjvErrors from "better-ajv-errors";
 import { MatcherState } from "expect";
 import { matcherHint } from "jest-matcher-utils";
-import RefParser from "json-schema-ref-parser";
+import RefParser from "@apidevtools/json-schema-ref-parser";
 import { ajvCompile } from "./ajvCompile";
 declare global {
   namespace jest {
