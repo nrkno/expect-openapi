@@ -54,7 +54,7 @@ export async function toMatchApiResponse(
 ) {
   const options = {
     isNot: this.isNot,
-    promise: this.promise
+    promise: this.promise,
   };
   const isApiResponse =
     typeof receivedAny.status === "number" &&
@@ -68,7 +68,7 @@ export async function toMatchApiResponse(
         "\n\n" +
         `must be superagent response \n` +
         `required props: { status: number, body: any, type: string }`,
-      pass: false
+      pass: false,
     };
   }
   const received: IApiResponse = receivedAny;
@@ -80,7 +80,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `schema has no path ${path}`,
-      pass: false
+      pass: false,
     };
   }
   const methodData = pathData[method];
@@ -90,7 +90,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `${path} has no method ${method}`,
-      pass: false
+      pass: false,
     };
   }
   const responses = methodData.responses || {};
@@ -101,7 +101,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `paths.${path}.${method}.responses has no responses. Should have either "default" or "${received.status}"`,
-      pass: false
+      pass: false,
     };
   }
   const content = response.content;
@@ -111,7 +111,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `paths.${path}.${method}.responses.${received.status}.content is empty`,
-      pass: false
+      pass: false,
     };
   }
   const typeData = content[received.type];
@@ -121,7 +121,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `paths.${path}.${method}.responses.${received.status}.content does not have ${received.type}`,
-      pass: false
+      pass: false,
     };
   }
   const schema = typeData.schema;
@@ -131,7 +131,7 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         `paths.${path}.${method}.responses.${received.status}.content.${received.type} does not have a schema`,
-      pass: false
+      pass: false,
     };
   }
 
@@ -144,9 +144,9 @@ export async function toMatchApiResponse(
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
         betterAjvErrors(schema, body, validate.errors, {
-          indent: 2
+          indent: 2,
         }),
-      pass: false
+      pass: false,
     };
   }
   return {
@@ -154,6 +154,6 @@ export async function toMatchApiResponse(
       matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
       "\n\n" +
       `should be a valid openapi response`,
-    pass: true
+    pass: true,
   };
 }

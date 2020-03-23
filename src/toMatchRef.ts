@@ -24,7 +24,7 @@ export async function toMatchRef$(
 ) {
   const options = {
     isNot: this.isNot,
-    promise: this.promise
+    promise: this.promise,
   };
   const spec = await RefParser.dereference(openapiSpec);
   const refs$ = await RefParser.resolve(spec);
@@ -35,7 +35,7 @@ export async function toMatchRef$(
         matcherHint("toMatchRef$", undefined, undefined, options) +
         "\n\n" +
         `could not resolve ${ref$}`,
-      pass: false
+      pass: false,
     };
   }
 
@@ -47,9 +47,9 @@ export async function toMatchRef$(
         matcherHint("toMatchRef$", undefined, undefined, options) +
         "\n\n" +
         betterAjvErrors(desiredSpec, received, validate.errors, {
-          indent: 2
+          indent: 2,
         }),
-      pass: false
+      pass: false,
     };
   }
   return {
@@ -57,6 +57,6 @@ export async function toMatchRef$(
       matcherHint("toMatchRef$", undefined, undefined, options) +
       "\n\n" +
       `should match schema at ${ref$}`,
-    pass: true
+    pass: true,
   };
 }
