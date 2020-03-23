@@ -17,7 +17,7 @@ export const ajvCompile = (
     nullable,
     jsonPointers,
     schemaId: "auto",
-    ...rest
+    ...rest,
   });
   ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-04.json"));
   ajv.addFormat("int32", isInt32);
@@ -49,7 +49,7 @@ export function transformNullable(object: any) {
     object.oneOf.push({ type: "null" });
   }
 
-  Object.keys(object).forEach(attr => {
+  Object.keys(object).forEach((attr) => {
     if (object[attr] == null) {
       return;
     }
@@ -63,16 +63,16 @@ export function transformNullable(object: any) {
 
 const isInt32: NumberFormatDefinition = {
   type: "number",
-  validate: n => {
+  validate: (n) => {
     const MIN_INT32 = -2147483648;
     const MAX_INT32 = 2147483647;
     return n <= MAX_INT32 && n >= MIN_INT32;
-  }
+  },
 };
 
 const isInt64: NumberFormatDefinition = {
   type: "number",
-  validate: n => {
+  validate: (n) => {
     return n <= Number.MAX_SAFE_INTEGER && n >= Number.MIN_SAFE_INTEGER;
-  }
+  },
 };
