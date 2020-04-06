@@ -1544,14 +1544,14 @@ expand-brackets@^2.1.4:
     to-regex "^3.0.1"
 
 expect@*, expect@^25.1.0, expect@^25.2.6:
-  version "25.2.6"
-  resolved "https://registry.yarnpkg.com/expect/-/expect-25.2.6.tgz#85f022097e8ed3c5666c1bd7f9076d3a790a8a47"
-  integrity sha512-hMqqX3OX5Erw7CLoXXcawqi6xThhz/rYk+vEufhoCAyzDC2PW99ypYc/pvcgKjyuwbOB1wjqqClmwvlOL36Inw==
+  version "25.2.7"
+  resolved "https://registry.yarnpkg.com/expect/-/expect-25.2.7.tgz#509b79f47502835f4071ff3ecc401f2eaecca709"
+  integrity sha512-yA+U2Ph0MkMsJ9N8q5hs9WgWI6oJYfecdXta6LkP/alY/jZZL1MHlJ2wbLh60Ucqf3G+51ytbqV3mlGfmxkpNw==
   dependencies:
     "@jest/types" "^25.2.6"
     ansi-styles "^4.0.0"
     jest-get-type "^25.2.6"
-    jest-matcher-utils "^25.2.6"
+    jest-matcher-utils "^25.2.7"
     jest-message-util "^25.2.6"
     jest-regex-util "^25.2.6"
 
@@ -2378,10 +2378,10 @@ jest-leak-detector@^25.2.6:
     jest-get-type "^25.2.6"
     pretty-format "^25.2.6"
 
-jest-matcher-utils@*, jest-matcher-utils@^25.1.0, jest-matcher-utils@^25.2.6:
-  version "25.2.6"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.2.6.tgz#a5156c1daa16e13ff6c55117f798b285a294a3e6"
-  integrity sha512-+6IbC98ZBw3X7hsfUvt+7VIYBdI0FEvhSBjWo9XTHOc1KAAHDsrSHdeyHH/Su0r/pf4OEGuWRRLPnjkhS2S19A==
+jest-matcher-utils@*, jest-matcher-utils@^25.1.0, jest-matcher-utils@^25.2.6, jest-matcher-utils@^25.2.7:
+  version "25.2.7"
+  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.2.7.tgz#53fad3c11fc42e92e374306df543026712c957a3"
+  integrity sha512-jNYmKQPRyPO3ny0KY1I4f0XW4XnpJ3Nx5ovT4ik0TYDOYzuXJW40axqOyS61l/voWbVT9y9nZ1THL1DlpaBVpA==
   dependencies:
     chalk "^3.0.0"
     jest-diff "^25.2.6"
