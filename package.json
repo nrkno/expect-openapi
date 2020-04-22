@@ -33,7 +33,7 @@
     "prettier": "prettier \"src/**/*.{js,jsx,ts,less,tsx,json}\""
   },
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^8.0.0",
+    "@apidevtools/json-schema-ref-parser": "^9.0.1",
     "ajv": "^6.10.2",
     "better-ajv-errors": "^0.6.7",
     "expect": "^25.1.0",
