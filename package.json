@@ -37,7 +37,7 @@
     "ajv": "^6.10.2",
     "better-ajv-errors": "^0.6.7",
     "expect": "^25.1.0",
-    "jest-matcher-utils": "^25.1.0",
+    "jest-matcher-utils": "^26.0.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
