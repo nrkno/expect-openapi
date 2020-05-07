@@ -81,7 +81,7 @@ describe("toMatchRef$", () => {
       "#/components/schemas/WithExample"
     );
   });
-  it.only("should handle nullable array", async () => {
+  it("should handle nullable array", async () => {
     await expect({ nullable: null }).toMatchRef$(
       testApi,
       "#/components/schemas/NullableOneOf"
