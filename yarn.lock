@@ -3,9 +3,9 @@
 
 
 "@apidevtools/json-schema-ref-parser@^9.0.1":
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/@apidevtools/json-schema-ref-parser/-/json-schema-ref-parser-9.0.1.tgz#c0ed0bd21a7397d2d7a83b69565268f2d78f2d7a"
-  integrity sha512-Qsdz0W0dyK84BuBh5KZATWXOtVDXIF2EeNRzpyWblPUeAmnIokwWcwrpAm5pTPMjuWoIQt9C67X3Af1OlL6oSw==
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@apidevtools/json-schema-ref-parser/-/json-schema-ref-parser-9.0.2.tgz#b3f82509dea6c50f49ff9eeb35af50bef60fe577"
+  integrity sha512-Q8QNyluEhbCCZS6F1wLqVkp5GuUHwq4qveZmZWE2OZA7dTEjyg3dkgxAy6fUzDNaEzzcNrY3D58cfph4881nlg==
   dependencies:
     "@jsdevtools/ono" "^7.1.2"
     call-me-maybe "^1.0.1"
