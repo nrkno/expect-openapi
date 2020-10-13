@@ -148,6 +148,19 @@
         "example": {
           "id": "hello"
         }
+      },
+      "NullableEnum": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "nullable": true,
+            "enum": ["hello", null]
+          }
+        },
+        "example": {
+          "value": "hello"
+        }
       }
     }
   }

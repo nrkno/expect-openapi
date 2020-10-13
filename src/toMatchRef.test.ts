@@ -87,4 +87,14 @@ describe("toMatchRef$", () => {
       "#/components/schemas/NullableOneOf"
     );
   });
+  it("should handle nullable enum", async () => {
+    await expect({ value: null }).toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableEnum"
+    );
+    await expect({ value: "hello" }).toMatchRef$(
+      testApi,
+      "#/components/schemas/NullableEnum"
+    );
+  });
 });

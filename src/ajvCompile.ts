@@ -31,22 +31,33 @@ export const ajvCompile = (
 };
 
 /**
- * AJV does not seem to support nullable like openapi3. (??)
+ * JSON Schema does not to support nullable like OpenAPI 3.0.x
+ * Transform OpenApi to JSONSchema (best effort)
  */
 export function transformNullable(object: any) {
-  if (object.type && object.nullable === true) {
-    object.type = [object.type, "null"];
+  if (object === null) {
+    return;
+  }
+  if (object.nullable) {
+    if (object.enum) {
+      object.oneOf = [
+        { type: "null" },
+        { type: object.type, enum: object.enum },
+      ];
+      delete object.enum;
+      delete object.type;
+    } else if (object.type) {
+      object.type = [object.type, "null"];
+    } else if (Array.isArray(object.anyOf)) {
+      object.anyOf.push({ type: "null" });
+    } else if (Array.isArray(object.allOf)) {
+      object.anyOf = object.allOf;
+      object.anyOf.push({ type: "null" });
+      delete object.allOf;
+    } else if (Array.isArray(object.oneOf)) {
+      object.oneOf.push({ type: "null" });
+    }
     delete object.nullable;
-  }
-
-  if (object.nullable && !object.type && Array.isArray(object.anyOf)) {
-    object.anyOf.push({ type: "null" });
-  }
-  if (object.nullable && !object.type && Array.isArray(object.allOf)) {
-    object.allOf.push({ type: "null" });
-  }
-  if (object.nullable && !object.type && Array.isArray(object.oneOf)) {
-    object.oneOf.push({ type: "null" });
   }
 
   Object.keys(object).forEach((attr) => {
