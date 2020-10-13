@@ -17,7 +17,8 @@ describe("toMatchRef$", () => {
     // above max
     await expect(2147483647 + 1).not.toMatchRef$(
       testApi,
-      "#/components/schemas/Int32Number"
+      "#/components/schemas/Int32Number",
+      { bailFast: true }
     );
     // below min
     await expect(-2147483648 + -1).not.toMatchRef$(

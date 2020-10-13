@@ -1,9 +1,9 @@
-import betterAjvErrors from "better-ajv-errors";
+import RefParser from "@apidevtools/json-schema-ref-parser";
 import { MatcherState } from "expect";
 import { matcherHint } from "jest-matcher-utils";
-import RefParser from "@apidevtools/json-schema-ref-parser";
 import get from "lodash/get";
 import { ajvCompile } from "./ajvCompile";
+import { getErrorMessage } from "./getErrorMessage";
 
 export type Method =
   | "delete"
@@ -40,7 +40,8 @@ declare global {
       toMatchApiResponse(
         schema: any,
         method: Method,
-        path: string
+        path: string,
+        options?: { bailFast: boolean }
       ): Promise<void>;
     }
   }
@@ -50,7 +51,8 @@ export async function toMatchApiResponse(
   receivedAny: any,
   openapiSpec: any,
   method: Method,
-  path: string
+  path: string,
+  { bailFast = false }: { bailFast?: boolean } = {}
 ) {
   const options = {
     isNot: this.isNot,
@@ -143,9 +145,7 @@ export async function toMatchApiResponse(
       message: () =>
         matcherHint("toMatchOpenapiResponse", undefined, undefined, options) +
         "\n\n" +
-        betterAjvErrors(schema, body, validate.errors, {
-          indent: 2,
-        }),
+        getErrorMessage(schema, body, validate.errors, { bailFast }),
       pass: false,
     };
   }

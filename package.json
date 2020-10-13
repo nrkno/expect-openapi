@@ -36,6 +36,7 @@
     "@apidevtools/json-schema-ref-parser": "^9.0.1",
     "ajv": "^6.10.2",
     "better-ajv-errors": "^0.6.7",
+    "chalk": "^4.1.0",
     "expect": "^26.0.0",
     "jest-matcher-utils": "^26.0.0",
     "lodash": "^4.17.15"

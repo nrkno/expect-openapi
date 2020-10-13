@@ -1,8 +1,9 @@
-import betterAjvErrors from "better-ajv-errors";
+import RefParser from "@apidevtools/json-schema-ref-parser";
 import { MatcherState } from "expect";
 import { matcherHint } from "jest-matcher-utils";
-import RefParser from "@apidevtools/json-schema-ref-parser";
 import { ajvCompile } from "./ajvCompile";
+import { getErrorMessage } from "./getErrorMessage";
+
 declare global {
   namespace jest {
     // tslint:disable-next-line:interface-name
@@ -12,7 +13,11 @@ declare global {
        * @param schema openapi.json schema, parsed as object
        * @param ref$ the type to match against
        */
-      toMatchRef$(schema: any, ref$: string): Promise<void>;
+      toMatchRef$(
+        schema: any,
+        ref$: string,
+        options?: { bailFast: boolean }
+      ): Promise<void>;
     }
   }
 }
@@ -20,7 +25,8 @@ export async function toMatchRef$(
   this: MatcherState,
   received: any,
   openapiSpec: any,
-  ref$: string
+  ref$: string,
+  { bailFast = false }: { bailFast?: boolean } = {}
 ) {
   const options = {
     isNot: this.isNot,
@@ -46,9 +52,7 @@ export async function toMatchRef$(
       message: () =>
         matcherHint("toMatchRef$", undefined, undefined, options) +
         "\n\n" +
-        betterAjvErrors(desiredSpec, received, validate.errors, {
-          indent: 2,
-        }),
+        getErrorMessage(desiredSpec, received, validate.errors, { bailFast }),
       pass: false,
     };
   }
