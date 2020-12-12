@@ -61,13 +61,3 @@ describe("my complex api", () => {
   });
 });
 ```
-
-## Development
-
-We use **yarn**
-
-scripts:
-
-- **test**
-- **lint**
-- **lint-fix**
