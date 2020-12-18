@@ -3,6 +3,7 @@ import { MatcherState } from "expect";
 import { matcherHint } from "jest-matcher-utils";
 import get from "lodash/get";
 import { ajvCompile } from "./ajvCompile";
+import { errorLogger } from "./ajvLogger";
 import { getErrorMessage } from "./getErrorMessage";
 
 export type Method =
@@ -137,7 +138,7 @@ export async function toMatchApiResponse(
     };
   }
 
-  const validate = ajvCompile(schema);
+  const validate = ajvCompile(schema, { logger: errorLogger });
   const body = received.body;
   const pass = await validate(body);
   if (!pass) {

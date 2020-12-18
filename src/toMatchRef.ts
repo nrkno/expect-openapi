@@ -2,6 +2,7 @@ import RefParser from "@apidevtools/json-schema-ref-parser";
 import { MatcherState } from "expect";
 import { matcherHint } from "jest-matcher-utils";
 import { ajvCompile } from "./ajvCompile";
+import { errorLogger } from "./ajvLogger";
 import { getErrorMessage } from "./getErrorMessage";
 
 declare global {
@@ -45,7 +46,7 @@ export async function toMatchRef$(
     };
   }
 
-  const validate = ajvCompile(desiredSpec);
+  const validate = ajvCompile(desiredSpec, { logger: errorLogger });
   const pass = await validate(received);
   if (!pass) {
     return {

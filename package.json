@@ -24,7 +24,7 @@
     "lint-fix": "run-p lint-fix:*",
     "lint-fix:format": "yarn --silent prettier --write",
     "lint-fix:tslint": "yarn --silent tslint --fix",
-    "lint:format": "yarn --silent prettier -l",
+    "lint:format": "yarn --silent prettier --check",
     "lint:tslint": "yarn --silent tslint",
     "prepare": "run-s build",
     "test": "run-s lint test:*",
