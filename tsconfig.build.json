@@ -10,7 +10,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "exclude": ["**/*.test.ts", "**/__fixtures__/**", "./examples/**"],
   "include": ["./src/**/*"]
