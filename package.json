@@ -35,7 +35,7 @@
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.1",
     "ajv": "^6.10.2",
-    "better-ajv-errors": "^0.8.0",
+    "better-ajv-errors": "^1.1.0",
     "chalk": "^4.1.0",
     "expect": "^27.0.1",
     "jest-matcher-utils": "^27.0.0",
