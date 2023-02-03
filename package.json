@@ -50,7 +50,7 @@
     "@types/lodash": "^4.14.144",
     "@types/node": "^18.0.0",
     "@types/prettier": "^2.0.0",
-    "@types/rimraf": "^3.0.0",
+    "@types/rimraf": "^4.0.5",
     "@types/supertest": "^2.0.8",
     "express": "^4.17.1",
     "jest": "^27.0.0",
